@@ -1,0 +1,31 @@
+<additional>
+    <poly id="H1_zone" color="green" fill="1" layer="5" shape="195,341.4 205,341.4 205,351.4 195,351.4"/>
+    <poi id="City_General" type="hospital" color="green" layer="6" x="200" y="346.4" imgFile="hospital.png" imgWidth="10" imgHeight="10">
+        <params>
+            <param key="hospital.id" value="H-01"/>
+            <param key="hospital.specialty" value="General Medicine, Emergency Care"/>
+            <param key="hospital.available_beds" value="12"/>
+            <param key="hospital.er_status" value="Accepting Patients"/>
+        </params>
+    </poi>
+
+    <poly id="H2_zone" color="green" fill="1" layer="5" shape="291,0 301,0 301,10 291,10"/>
+    <poi id="Green_Heart" type="hospital" color="green" layer="6" x="296" y="5" imgFile="hospital.png" imgWidth="10" imgHeight="10">
+        <params>
+            <param key="hospital.id" value="H-02"/>
+            <param key="hospital.specialty" value="Cardiology"/>
+            <param key="hospital.available_beds" value="5"/>
+            <param key="hospital.er_status" value="Accepting Cardiac Patients"/>
+        </params>
+    </poi>
+
+    <poly id="H3_zone" color="green" fill="1" layer="5" shape="-3,167 7,167 7,177 -3,177"/>
+    <poi id="Tumakuru_Trauma" type="hospital" color="green" layer="6" x="2" y="172" imgFile="hospital.png" imgWidth="10" imgHeight="10">
+        <params>
+            <param key="hospital.id" value="H-04"/>
+            <param key="hospital.specialty" value="Trauma Care, Orthopedics"/>
+            <param key="hospital.available_beds" value="3"/>
+            <param key="hospital.er_status" value="Busy"/>
+        </params>
+    </poi>
+</additional>

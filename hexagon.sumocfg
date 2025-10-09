@@ -1,0 +1,15 @@
+<configuration>
+    <input>
+        <net-file value="hexagon.net.xml"/>
+        <route-files value="hexagon.rou.xml"/>
+        <additional-files value="hospitals.add.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="1000"/>
+    </time>
+    
+    <output>
+        <tripinfo-output value="tripinfo.xml"/>
+    </output>
+</configuration>

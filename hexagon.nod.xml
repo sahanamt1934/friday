@@ -1,0 +1,10 @@
+<nodes>
+    <node id="n_center" x="0.0" y="0.0" type="traffic_light" radius="20.0"/>
+
+    <node id="n1" x="100.0" y="173.2" type="priority"/>
+    <node id="n2" x="200.0" y="0.0"   type="priority"/>
+    <node id="n3" x="100.0" y="-173.2" type="priority"/>
+    <node id="n4" x="-100.0" y="-173.2" type="priority"/>
+    <node id="n5" x="-200.0" y="0.0"   type="priority"/>
+    <node id="n6" x="-100.0" y="173.2" type="priority"/>
+</nodes>

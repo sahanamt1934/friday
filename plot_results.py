@@ -1,0 +1,96 @@
+import xml.etree.ElementTree as ET
+import pandas as pd
+import matplotlib.pyplot as plt
+from io import StringIO
+
+# The XML data from your tripinfo.xml file
+xml_data = """
+<tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
+    <tripinfo id="car_4" depart="41.00" departLane="e8_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="109.00" arrivalLane="e11_0" arrivalPos="164.91" arrivalSpeed="13.03" duration="68.00" routeLength="545.39" waitingTime="13.00" waitingCount="1" stopTime="0.00" timeLoss="27.81" rerouteNo="1" devices="tripinfo_car_4 routing_car_4" vType="car" speedFactor="1.01" vaporized=""/>
+    <tripinfo id="car_8" depart="81.00" departLane="e2_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="146.00" arrivalLane="e12_0" arrivalPos="164.91" arrivalSpeed="13.97" duration="65.00" routeLength="565.96" waitingTime="11.00" waitingCount="1" stopTime="0.00" timeLoss="25.29" rerouteNo="1" devices="tripinfo_car_8 routing_car_8" vType="car" speedFactor="1.05" vaporized=""/>
+    <tripinfo id="car_6" depart="61.00" departLane="e9_rev_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="155.00" arrivalLane="e1_0" arrivalPos="180.91" arrivalSpeed="14.23" duration="94.00" routeLength="559.64" waitingTime="41.00" waitingCount="1" stopTime="0.00" timeLoss="53.55" rerouteNo="1" devices="tripinfo_car_6 routing_car_6" vType="car" speedFactor="1.03" vaporized=""/>
+    <tripinfo id="car_10" depart="101.00" departLane="e4_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="155.00" arrivalLane="e10_rev_0" arrivalPos="164.91" arrivalSpeed="12.83" duration="54.00" routeLength="543.10" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="10.19" rerouteNo="1" devices="tripinfo_car_10 routing_car_10" vType="car" speedFactor="0.94" vaporized=""/>
+    <tripinfo id="car_9" depart="91.00" departLane="e6_rev_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="156.00" arrivalLane="e7_rev_0" arrivalPos="164.91" arrivalSpeed="7.93" duration="65.00" routeLength="535.54" waitingTime="4.00" waitingCount="1" stopTime="0.00" timeLoss="18.47" rerouteNo="1" devices="tripinfo_car_9 routing_car_9" vType="car" speedFactor="0.89" vaporized=""/>
+    <tripinfo id="car_5" depart="51.00" departLane="e3_rev_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="157.00" arrivalLane="e6_0" arrivalPos="180.91" arrivalSpeed="14.63" duration="106.00" routeLength="763.67" waitingTime="35.00" waitingCount="1" stopTime="0.00" timeLoss="52.85" rerouteNo="1" devices="tripinfo_car_5 routing_car_5" vType="car" speedFactor="1.08" vaporized=""/>
+    <tripinfo id="amb_2" depart="25.00" departLane="e6_0" departPos="7.10" departSpeed="0.00" departDelay="0.00" arrival="182.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="13.89" duration="157.00" routeLength="1078.34" waitingTime="65.00" waitingCount="2" stopTime="0.00" timeLoss="75.20" rerouteNo="0" devices="tripinfo_amb_2" vType="ambulance" speedFactor="1.00" vaporized=""/>
+    <tripinfo id="v_corrected_2" depart="35.00" departLane="e6_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="190.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="12.35" duration="155.00" routeLength="1080.34" waitingTime="43.00" waitingCount="1" stopTime="0.00" timeLoss="67.21" rerouteNo="0" devices="tripinfo_v_corrected_2" vType="car" speedFactor="0.94" vaporized=""/>
+    <tripinfo id="car_7" depart="71.00" departLane="e10_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="192.00" arrivalLane="e5_rev_0" arrivalPos="180.91" arrivalSpeed="11.42" duration="121.00" routeLength="740.14" waitingTime="38.00" waitingCount="1" stopTime="0.00" timeLoss="54.58" rerouteNo="1" devices="tripinfo_car_7 routing_car_7" vType="car" speedFactor="0.83" vaporized=""/>
+    <tripinfo id="car_16" depart="161.00" departLane="e7_rev_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="193.00" arrivalLane="e10_0" arrivalPos="164.91" arrivalSpeed="12.58" duration="32.00" routeLength="375.81" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="4.10" rerouteNo="0" devices="tripinfo_car_16 routing_car_16" vType="car" speedFactor="0.99" vaporized=""/>
+    <tripinfo id="car_15" depart="151.00" departLane="e12_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="196.00" arrivalLane="e4_rev_0" arrivalPos="180.91" arrivalSpeed="14.57" duration="45.00" routeLength="557.47" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="7.62" rerouteNo="1" devices="tripinfo_car_15 routing_car_15" vType="car" speedFactor="1.12" vaporized=""/>
+    <tripinfo id="car_11" depart="111.00" departLane="e11_rev_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="221.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="10.85" duration="110.00" routeLength="565.96" waitingTime="48.00" waitingCount="1" stopTime="0.00" timeLoss="60.95" rerouteNo="1" devices="tripinfo_car_11 routing_car_11" vType="car" speedFactor="0.86" vaporized=""/>
+    <tripinfo id="car_12" depart="121.00" departLane="e1_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="223.00" arrivalLane="e5_0" arrivalPos="180.91" arrivalSpeed="15.11" duration="102.00" routeLength="756.11" waitingTime="28.00" waitingCount="2" stopTime="0.00" timeLoss="50.55" rerouteNo="1" devices="tripinfo_car_12 routing_car_12" vType="car" speedFactor="1.09" vaporized=""/>
+    <tripinfo id="car_13" depart="131.00" departLane="e8_rev_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="223.00" arrivalLane="e3_rev_0" arrivalPos="180.91" arrivalSpeed="13.14" duration="92.00" routeLength="570.56" waitingTime="34.00" waitingCount="2" stopTime="0.00" timeLoss="50.25" rerouteNo="1" devices="tripinfo_car_13 routing_car_13" vType="car" speedFactor="1.03" vaporized=""/>
+    <tripinfo id="car_17" depart="171.00" departLane="e3_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="223.00" arrivalLane="e11_rev_0" arrivalPos="164.91" arrivalSpeed="12.18" duration="52.00" routeLength="546.55" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="8.01" rerouteNo="1" devices="tripinfo_car_17 routing_car_17" vType="car" speedFactor="0.93" vaporized=""/>
+    <tripinfo id="car_14" depart="141.00" departLane="e9_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="245.00" arrivalLane="e6_0" arrivalPos="180.91" arrivalSpeed="14.10" duration="104.00" routeLength="735.54" waitingTime="35.00" waitingCount="1" stopTime="0.00" timeLoss="51.24" rerouteNo="1" devices="tripinfo_car_14 routing_car_14" vType="car" speedFactor="1.05" vaporized=""/>
+    <tripinfo id="car_18" depart="181.00" departLane="e5_rev_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="255.00" arrivalLane="e1_0" arrivalPos="180.91" arrivalSpeed="11.75" duration="74.00" routeLength="754.57" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="10.45" rerouteNo="1" devices="tripinfo_car_18 routing_car_18" vType="car" speedFactor="0.88" vaporized=""/>
+    <tripinfo id="car_21" depart="216.00" departLane="e6_0" departPos="5.10" departSpeed="0.00" departDelay="5.00" arrival="273.00" arrivalLane="e9_rev_0" arrivalPos="164.91" arrivalSpeed="15.89" duration="57.00" routeLength="743.14" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="8.86" rerouteNo="1" devices="tripinfo_car_21 routing_car_21" vType="car" speedFactor="1.16" vaporized=""/>
+    <tripinfo id="car_20" depart="201.00" departLane="e10_rev_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="275.00" arrivalLane="e4_0" arrivalPos="180.91" arrivalSpeed="12.82" duration="74.00" routeLength="519.54" waitingTime="21.00" waitingCount="1" stopTime="0.00" timeLoss="31.84" rerouteNo="1" devices="tripinfo_car_20 routing_car_20" vType="car" speedFactor="0.94" vaporized=""/>
+    <tripinfo id="car_23" depart="231.00" departLane="e4_rev_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="280.00" arrivalLane="e7_0" arrivalPos="164.91" arrivalSpeed="13.78" duration="49.00" routeLength="573.52" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="6.58" rerouteNo="1" devices="tripinfo_car_23 routing_car_23" vType="car" speedFactor="1.01" vaporized=""/>
+    <tripinfo id="car_19" depart="191.00" departLane="e2_rev_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="293.00" arrivalLane="e8_0" arrivalPos="164.91" arrivalSpeed="11.81" duration="102.00" routeLength="527.11" waitingTime="48.00" waitingCount="2" stopTime="0.00" timeLoss="59.38" rerouteNo="1" devices="tripinfo_car_19 routing_car_19" vType="car" speedFactor="0.94" vaporized=""/>
+    <tripinfo id="car_22" depart="223.00" departLane="e11_0" departPos="5.10" departSpeed="0.00" departDelay="2.00" arrival="306.00" arrivalLane="e1_rev_0" arrivalPos="180.91" arrivalSpeed="13.60" duration="83.00" routeLength="743.10" waitingTime="11.00" waitingCount="1" stopTime="0.00" timeLoss="28.12" rerouteNo="1" devices="tripinfo_car_22 routing_car_22" vType="car" speedFactor="1.02" vaporized=""/>
+    <tripinfo id="car_27" depart="273.00" departLane="e9_0" departPos="5.10" departSpeed="0.00" departDelay="2.00" arrival="309.00" arrivalLane="e2_rev_0" arrivalPos="180.91" arrivalSpeed="11.68" duration="36.00" routeLength="357.52" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="5.31" rerouteNo="0" devices="tripinfo_car_27 routing_car_27" vType="car" speedFactor="0.87" vaporized=""/>
+    <tripinfo id="amb_1" depart="5.00" departLane="e3_0" departPos="7.10" departSpeed="0.00" departDelay="0.00" arrival="316.00" arrivalLane="e11_0" arrivalPos="164.91" arrivalSpeed="13.89" duration="311.00" routeLength="2602.47" waitingTime="85.00" waitingCount="3" stopTime="0.00" timeLoss="113.26" rerouteNo="0" devices="tripinfo_amb_1" vType="ambulance" speedFactor="1.00" vaporized=""/>
+    <tripinfo id="v_corrected" depart="30.00" departLane="e3_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="319.00" arrivalLane="e11_0" arrivalPos="164.91" arrivalSpeed="13.65" duration="289.00" routeLength="2604.47" waitingTime="47.00" waitingCount="2" stopTime="0.00" timeLoss="101.05" rerouteNo="0" devices="tripinfo_v_corrected" vType="car" speedFactor="1.06" vaporized=""/>
+    <tripinfo id="car_25" depart="251.00" departLane="e7_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="322.00" arrivalLane="e3_0" arrivalPos="180.91" arrivalSpeed="11.13" duration="71.00" routeLength="743.14" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="8.90" rerouteNo="1" devices="tripinfo_car_25 routing_car_25" vType="car" speedFactor="0.89" vaporized=""/>
+    <tripinfo id="car_26" depart="261.00" departLane="e8_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="338.00" arrivalLane="e5_rev_0" arrivalPos="180.91" arrivalSpeed="10.42" duration="77.00" routeLength="757.42" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="9.05" rerouteNo="1" devices="tripinfo_car_26 routing_car_26" vType="car" apeedFactor="0.83" vaporized=""/>
+    <tripinfo id="car_24" depart="241.00" departLane="e1_rev_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="348.00" arrivalLane="e12_0" arrivalPos="164.91" arrivalSpeed="13.45" duration="107.00" routeLength="553.50" waitingTime="52.00" waitingCount="1" stopTime="0.00" timeLoss="64.11" rerouteNo="1" devices="tripinfo_car_24 routing_car_24" vType="car" speedFactor="0.97" vaporized=""/>
+    <tripinfo id="car_28" depart="281.00" departLane="e10_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="369.00" arrivalLane="e6_rev_0" arrivalPos="180.91" arrivalSpeed="12.54" duration="88.00" routeLength="743.10" waitingTime="11.00" waitingCount="1" stopTime="0.00" timeLoss="27.07" rerouteNo="1" devices="tripinfo_car_28 routing_car_28" vType="car" speedFactor="0.92" vaporized=""/>
+    <tripinfo id="car_29" depart="291.00" departLane="e11_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="399.00" arrivalLane="e1_rev_0" arrivalPos="180.91" arrivalSpeed="12.09" duration="108.00" routeLength="743.10" waitingTime="33.00" waitingCount="1" stopTime="0.00" timeLoss="48.39" rerouteNo="1" devices="tripinfo_car_29 routing_car_29" vType="car" speedFactor="0.95" vaporized=""/>
+</tripinfos>
+"""
+
+# Parse the XML data
+tree = ET.parse(StringIO(xml_data))
+root = tree.getroot()
+
+# Extract data into a list of dictionaries
+data = []
+for trip in root.findall('tripinfo'):
+    data.append({
+        'id': trip.get('id'),
+        'duration': float(trip.get('duration')),
+        'routeLength': float(trip.get('routeLength')),
+        'waitingTime': float(trip.get('waitingTime')),
+        'timeLoss': float(trip.get('timeLoss')),
+        'vType': trip.get('vType')
+    })
+
+# Create a pandas DataFrame
+df = pd.DataFrame(data)
+
+# --- Plot 1: Ambulance Trip Breakdown (Pie Charts) ---
+fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+fig.suptitle('Ambulance Trip Time Breakdown', fontsize=16)
+
+# Ambulance 1
+amb1_data = df[df['id'] == 'amb_1'].iloc[0]
+driving_time1 = amb1_data['duration'] - amb1_data['waitingTime']
+sizes1 = [driving_time1, amb1_data['waitingTime']]
+labels1 = 'Driving Time', 'Waiting Time'
+axes[0].pie(sizes1, labels=labels1, autopct='%1.1f%%', startangle=90, colors=['skyblue', 'lightcoral'])
+axes[0].set_title('Ambulance 1 (amb_1)')
+axes[0].axis('equal')
+
+# Ambulance 2
+amb2_data = df[df['id'] == 'amb_2'].iloc[0]
+driving_time2 = amb2_data['duration'] - amb2_data['waitingTime']
+sizes2 = [driving_time2, amb2_data['waitingTime']]
+labels2 = 'Driving Time', 'Waiting Time'
+axes[1].pie(sizes2, labels=labels2, autopct='%1.1f%%', startangle=90, colors=['skyblue', 'lightcoral'])
+axes[1].set_title('Ambulance 2 (amb_2)')
+axes[1].axis('equal')
+
+plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+plt.show()
+
+
+# --- Plot 2: Distribution of Car Trip Durations (Histogram) ---
+car_durations = df[df['vType'] == 'car']['duration']
+plt.figure(figsize=(10, 6))
+plt.hist(car_durations, bins=15, color='skyblue', edgecolor='black')
+plt.xlabel('Trip Duration (seconds)')
+plt.ylabel('Number of Cars')
+plt.title('Distribution of Car Trip Durations')
+plt.grid(axis='y', alpha=0.75)
+plt.tight_layout()
+plt.show()
