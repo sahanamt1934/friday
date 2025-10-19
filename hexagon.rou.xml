@@ -2,64 +2,31 @@
     <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" maxSpeed="70" color="0.8,0.8,0.8"/>
     <vType id="ambulance" accel="4.0" decel="6.0" sigma="0" length="7" maxSpeed="90" vClass="emergency" color="1,0,0"/>
 
-    <route id="amb_route_1_long" edges="e3 e10_rev e9 e9_rev e8 e1_rev e1 e8_rev e12 e6 e7_rev e12 e12_rev e11"/>
-    <route id="amb_route_2_long" edges="e6 e7_rev e7 e7_rev e8 e2"/>
-    <route id="corrected_route" edges="e3 e10_rev e9 e9_rev e8 e1_rev e1 e8_rev e12 e6 e7_rev e12 e12_rev e11"/>
-    <route id="corrected_route_2" edges="e6 e7_rev e7 e7_rev e8 e2"/>
+    <vehicle id="amb_1" type="ambulance" depart="0" departLane="free" departPos="random" departSpeed="0">
+        <route edges="e5"/>
+    </vehicle>
+    <vehicle id="amb_2" type="ambulance" depart="0" departLane="free" departPos="random" departSpeed="0">
+        <route edges="e10"/>
+    </vehicle>
+    <vehicle id="amb_3" type="ambulance" depart="0" departLane="free" departPos="random" departSpeed="0">
+        <route edges="e1"/>
+    </vehicle>
 
-    <vehicle id="amb_1" type="ambulance" route="amb_route_1_long" depart="5">
-        <params>
-            <param key="patient.id" value="734-A1"/>
-            <param key="patient.name" value="Aarav Sharma"/>
-            <param key="patient.age" value="68"/>
-            <param key="patient.sex" value="Male"/>
-            <param key="patient.condition" value="Acute Myocardial Infarction"/>
-            <param key="patient.criticality" value="High"/>
-        </params>
+    <vehicle id="amb_4" type="ambulance" depart="0" departLane="free" departPos="random" departSpeed="0">
+        <route edges="e2"/>
+    </vehicle>
+    <vehicle id="amb_5" type="ambulance" depart="0" departLane="free" departPos="random" departSpeed="0">
+        <route edges="e3"/>
+    </vehicle>
+    <vehicle id="amb_6" type="ambulance" depart="0" departLane="free" departPos="random" departSpeed="0">
+        <route edges="e4"/>
+    </vehicle>
+    <vehicle id="amb_7" type="ambulance" depart="0" departLane="free" departPos="random" departSpeed="0">
+        <route edges="e7_rev"/>
+    </vehicle>
+    <vehicle id="amb_8" type="ambulance" depart="0" departLane="free" departPos="random" departSpeed="0">
+        <route edges="e11_rev"/>
     </vehicle>
     
-    <vehicle id="amb_2" type="ambulance" route="amb_route_2_long" depart="25">
-        <params>
-            <param key="patient.id" value="735-A2"/>
-            <param key="patient.name" value="Priya Singh"/>
-            <param key="patient.age" value="25"/>
-            <param key="patient.sex" value="Female"/>
-            <param key="patient.condition" value="Head Trauma / Fractured Wrist"/>
-            <param key="patient.criticality" value="Moderate"/>
-        </params>
-    </vehicle>
-
-    <vehicle id="v_corrected" type="car" route="corrected_route" depart="30" color="0,255,0"/>
-    <vehicle id="v_corrected_2" type="car" route="corrected_route_2" depart="35" color="255,255,255"/>
-
-    <trip id="car_0" type="car" from="e1" to="e4_rev" depart="1"/>
-    <trip id="car_1" type="car" from="e5" to="e9" depart="11"/>
-    <trip id="car_2" type="car" from="e12_rev" to="e3" depart="21"/>
-    <trip id="car_3" type="car" from="e7" to="e2_rev" depart="31"/>
-    <trip id="car_4" type="car" from="e8" to="e11" depart="41"/>
-    <trip id="car_5" type="car" from="e3_rev" to="e6" depart="51"/>
-    <trip id="car_6" type="car" from="e9_rev" to="e1" depart="61"/>
-    <trip id="car_7" type="car" from="e10" to="e5_rev" depart="71"/>
-    <trip id="car_8" type="car" from="e2" to="e12" depart="81"/>
-    <trip id="car_9" type="car" from="e6_rev" to="e7_rev" depart="91"/>
-    <trip id="car_10" type="car" from="e4" to="e10_rev" depart="101"/>
-    <trip id="car_11" type="car" from="e11_rev" to="e2" depart="111"/>
-    <trip id="car_12" type="car" from="e1" to="e5" depart="121"/>
-    <trip id="car_13" type="car" from="e8_rev" to="e3_rev" depart="131"/>
-    <trip id="car_14" type="car" from="e9" to="e6" depart="141"/>
-    <trip id="car_15" type="car" from="e12" to="e4_rev" depart="151"/>
-    <trip id="car_16" type="car" from="e7_rev" to="e10" depart="161"/>
-    <trip id="car_17" type="car" from="e3" to="e11_rev" depart="171"/>
-    <trip id="car_18" type="car" from="e5_rev" to="e1" depart="181"/>
-    <trip id="car_19" type="car" from="e2_rev" to="e8" depart="191"/>
-    <trip id="car_20" type="car" from="e10_rev" to="e4" depart="201"/>
-    <trip id="car_21" type="car" from="e6" to="e9_rev" depart="211"/>
-    <trip id="car_22" type="car" from="e11" to="e1_rev" depart="221"/>
-    <trip id="car_23" type="car" from="e4_rev" to="e7" depart="231"/>
-    <trip id="car_24" type="car" from="e1_rev" to="e12" depart="241"/>
-    <trip id="car_25" type="car" from="e7" to="e3" depart="251"/>
-    <trip id="car_26" type="car" from="e8" to="e5_rev" depart="261"/>
-    <trip id="car_27" type="car" from="e9" to="e2_rev" depart="271"/>
-    <trip id="car_28" type="car" from="e10" to="e6_rev" depart="281"/>
-    <trip id="car_29" type="car" from="e11" to="e1_rev" depart="291"/>
+    <flow id="bg_traffic" type="car" begin="0" end="1000" number="100" from="e6" to="e2"/>
 </routes>

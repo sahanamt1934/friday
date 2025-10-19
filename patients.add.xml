@@ -1,0 +1,5 @@
+<additional>
+<poi id="P01" type="patient" color="red" layer="6" x="100" y="340"/>
+<poi id="P02" type="patient" color="red" layer="6" x="390" y="173"/>
+<poi id="P03" type="patient" color="red" layer="6" x="295" y="10"/>
+</additional>

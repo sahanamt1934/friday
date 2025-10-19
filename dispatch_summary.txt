@@ -1,0 +1,148 @@
+========================================
+   Event-Driven Dispatch Summary
+========================================
+
+--- Mission 1 (Dispatched at T=1.0s) ---
+  Ambulance: amb_1
+
+  Patient Details:
+    - ID:         P07
+    - Name:       Suresh Verma
+    - Condition:  Allergic Reaction (Severity: medium)
+    - Location:   Edge 'e9'
+
+  Assigned Hospital:
+    - ID:         H-01
+    - Name:       City_General
+    - Specialties:General Medicine, Emergency Care
+    - Beds (Current Avail. Before): 12 -> 11
+    - Destination:Edge 'e6'
+
+----------------------------------------
+
+--- Mission 2 (Dispatched at T=1.0s) ---
+  Ambulance: amb_2
+
+  Patient Details:
+    - ID:         P08
+    - Name:       Vikram Rathod
+    - Condition:  Chest Pain (Severity: high)
+    - Location:   Edge 'e4'
+
+  Assigned Hospital:
+    - ID:         H-02
+    - Name:       Green_Heart
+    - Specialties:Cardiology
+    - Beds (Current Avail. Before): 5 -> 4
+    - Destination:Edge 'e2'
+
+----------------------------------------
+
+--- Mission 3 (Dispatched at T=1.0s) ---
+  Ambulance: amb_3
+
+  Patient Details:
+    - ID:         P03
+    - Name:       Meera Iyer
+    - Condition:  Sprained Ankle (Severity: low)
+    - Location:   Edge 'e6_rev'
+
+  Assigned Hospital:
+    - ID:         H-04
+    - Name:       Tumakuru_Trauma
+    - Specialties:Trauma Care, Orthopedics
+    - Beds (Current Avail. Before): 3 -> 2
+    - Destination:Edge 'e4'
+
+----------------------------------------
+
+--- Mission 4 (Dispatched at T=1.0s) ---
+  Ambulance: amb_4
+
+  Patient Details:
+    - ID:         P01
+    - Name:       Ravi Kumar
+    - Condition:  Cardiac Arrest (Severity: high)
+    - Location:   Edge 'e2'
+
+  Assigned Hospital:
+    - ID:         H-02
+    - Name:       Green_Heart
+    - Specialties:Cardiology
+    - Beds (Current Avail. Before): 4 -> 3
+    - Destination:Edge 'e2'
+
+----------------------------------------
+
+--- Mission 5 (Dispatched at T=1.0s) ---
+  Ambulance: amb_5
+
+  Patient Details:
+    - ID:         P05
+    - Name:       Priya Sharma
+    - Condition:  Breathing Difficulty (Severity: medium)
+    - Location:   Edge 'e12'
+
+  Assigned Hospital:
+    - ID:         H-01
+    - Name:       City_General
+    - Specialties:General Medicine, Emergency Care
+    - Beds (Current Avail. Before): 11 -> 10
+    - Destination:Edge 'e6'
+
+----------------------------------------
+
+--- Mission 6 (Dispatched at T=1.0s) ---
+  Ambulance: amb_6
+
+  Patient Details:
+    - ID:         P04
+    - Name:       Anjali Gupta
+    - Condition:  Minor Burn (Severity: low)
+    - Location:   Edge 'e7_rev'
+
+  Assigned Hospital:
+    - ID:         H-01
+    - Name:       City_General
+    - Specialties:General Medicine, Emergency Care
+    - Beds (Current Avail. Before): 10 -> 9
+    - Destination:Edge 'e6'
+
+----------------------------------------
+
+--- Mission 7 (Dispatched at T=1.0s) ---
+  Ambulance: amb_7
+
+  Patient Details:
+    - ID:         P02
+    - Name:       Amit Patel
+    - Condition:  Head Injury (Severity: high)
+    - Location:   Edge 'e5_rev'
+
+  Assigned Hospital:
+    - ID:         H-04
+    - Name:       Tumakuru_Trauma
+    - Specialties:Trauma Care, Orthopedics
+    - Beds (Current Avail. Before): 2 -> 1
+    - Destination:Edge 'e4'
+
+----------------------------------------
+
+--- Mission 8 (Dispatched at T=1.0s) ---
+  Ambulance: amb_8
+
+  Patient Details:
+    - ID:         P06
+    - Name:       Sita Devi
+    - Condition:  Multiple Fractures (Severity: high)
+    - Location:   Edge 'e11_rev'
+
+  Assigned Hospital:
+    - ID:         H-04
+    - Name:       Tumakuru_Trauma
+    - Specialties:Trauma Care, Orthopedics
+    - Beds (Current Avail. Before): 1 -> 0
+    - Destination:Edge 'e4'
+
+----------------------------------------
+
