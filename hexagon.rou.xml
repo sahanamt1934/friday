@@ -1,6 +1,6 @@
 <routes>
     <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" maxSpeed="70" color="0.8,0.8,0.8"/>
-    <vType id="ambulance" accel="4.0" decel="6.0" sigma="0" length="7" maxSpeed="90" vClass="emergency" color="1,0,0"/>
+    <vType id="ambulance" accel="6.0" decel="9.0" sigma="0" length="7" maxSpeed="120" vClass="emergency" color="1,0,0"/>
 
     <vehicle id="amb_1" type="ambulance" depart="0" departLane="free" departPos="random" departSpeed="0">
         <route edges="e5"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-10-20 02:25:38 by Eclipse SUMO netedit Version 1.24.0
+<!-- generated on 2025-10-20 21:08:07 by Eclipse SUMO netedit Version 1.24.0
 <neteditConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/neteditConfiguration.xsd">
 
     <input>
@@ -507,50 +507,50 @@
         <lane id="e9_rev_0" index="0" speed="13.89" length="164.91" shape="296.61,9.06 214.16,151.88"/>
     </edge>
 
-    <tlLogic id="n1" type="static" programID="0" offset="0">
-        <phase duration="42" state="GggrrrGGg"/>
+    <tlLogic id="n1" type="actuated" programID="0" offset="0">
+        <phase duration="42" state="GggrrrGGg" minDur="5" maxDur="50"/>
         <phase duration="3"  state="yyyrrrGyy"/>
-        <phase duration="42" state="rrrGGgGrr"/>
+        <phase duration="42" state="rrrGGgGrr" minDur="5" maxDur="50"/>
         <phase duration="3"  state="rrryyyGrr"/>
     </tlLogic>
-    <tlLogic id="n2" type="static" programID="0" offset="0">
-        <phase duration="42" state="GggrrrGGg"/>
+    <tlLogic id="n2" type="actuated" programID="0" offset="0">
+        <phase duration="42" state="GggrrrGGg" minDur="5" maxDur="50"/>
         <phase duration="3"  state="yyyrrrGyy"/>
-        <phase duration="42" state="rrrGGgGrr"/>
+        <phase duration="42" state="rrrGGgGrr" minDur="5" maxDur="50"/>
         <phase duration="3"  state="rrryyyGrr"/>
     </tlLogic>
-    <tlLogic id="n3" type="static" programID="0" offset="0">
-        <phase duration="42" state="GGgGggrrr"/>
+    <tlLogic id="n3" type="actuated" programID="0" offset="0">
+        <phase duration="42" state="GGgGggrrr" minDur="5" maxDur="50"/>
         <phase duration="3"  state="Gyyyyyrrr"/>
-        <phase duration="42" state="GrrrrrGGg"/>
+        <phase duration="42" state="GrrrrrGGg" minDur="5" maxDur="50"/>
         <phase duration="3"  state="Grrrrryyy"/>
     </tlLogic>
-    <tlLogic id="n4" type="static" programID="0" offset="0">
-        <phase duration="42" state="rrrGGgGgg"/>
+    <tlLogic id="n4" type="actuated" programID="0" offset="0">
+        <phase duration="42" state="rrrGGgGgg" minDur="5" maxDur="50"/>
         <phase duration="3"  state="rrrGyyyyy"/>
-        <phase duration="42" state="GGgGrrrrr"/>
+        <phase duration="42" state="GGgGrrrrr" minDur="5" maxDur="50"/>
         <phase duration="3"  state="yyyGrrrrr"/>
     </tlLogic>
-    <tlLogic id="n5" type="static" programID="0" offset="0">
-        <phase duration="42" state="GggrrrGGg"/>
+    <tlLogic id="n5" type="actuated" programID="0" offset="0">
+        <phase duration="42" state="GggrrrGGg" minDur="5" maxDur="50"/>
         <phase duration="3"  state="yyyrrrGyy"/>
-        <phase duration="42" state="rrrGGgGrr"/>
+        <phase duration="42" state="rrrGGgGrr" minDur="5" maxDur="50"/>
         <phase duration="3"  state="rrryyyGrr"/>
     </tlLogic>
-    <tlLogic id="n6" type="static" programID="0" offset="0">
-        <phase duration="42" state="GggrrrGGg"/>
+    <tlLogic id="n6" type="actuated" programID="0" offset="0">
+        <phase duration="42" state="GggrrrGGg" minDur="5" maxDur="50"/>
         <phase duration="3"  state="yyyrrrGyy"/>
-        <phase duration="42" state="rrrGGgGrr"/>
+        <phase duration="42" state="rrrGGgGrr" minDur="5" maxDur="50"/>
         <phase duration="3"  state="rrryyyGrr"/>
     </tlLogic>
-    <tlLogic id="n_center" type="static" programID="0" offset="0">
-        <phase duration="26" state="rrrrrrGGGgggrrrrrrrrrrrrGGGgggrrrrrr"/>
+    <tlLogic id="n_center" type="actuated" programID="0" offset="0">
+        <phase duration="26" state="rrrrrrGGGgggrrrrrrrrrrrrGGGgggrrrrrr" minDur="5" maxDur="50"/>
         <phase duration="3"  state="rrrrrryyyyyyrrrrrrrrrrrryyyyyyrrrrrr"/>
         <phase duration="1"  state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
-        <phase duration="26" state="rrrrrrrrrrrrGGGgggrrrrrrrrrrrrGGGggg"/>
+        <phase duration="26" state="rrrrrrrrrrrrGGGgggrrrrrrrrrrrrGGGggg" minDur="5" maxDur="50"/>
         <phase duration="3"  state="rrrrrrrrrrrryyyyyyrrrrrrrrrrrryyyyyy"/>
         <phase duration="1"  state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
-        <phase duration="26" state="GGGgggrrrrrrrrrrrrGGGgggrrrrrrrrrrrr"/>
+        <phase duration="26" state="GGGgggrrrrrrrrrrrrGGGgggrrrrrrrrrrrr" minDur="5" maxDur="50"/>
         <phase duration="3"  state="yyyyyyrrrrrrrrrrrryyyyyyrrrrrrrrrrrr"/>
         <phase duration="1"  state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
     </tlLogic>

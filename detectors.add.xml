@@ -1,0 +1,33 @@
+<additional>
+    <laneAreaDetector id="det_e7_rev_0" lane="e7_rev_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e8_rev_0" lane="e8_rev_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e9_rev_0" lane="e9_rev_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e10_rev_0" lane="e10_rev_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e11_rev_0" lane="e11_rev_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e12_rev_0" lane="e12_rev_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+
+    <laneAreaDetector id="det_e1_rev_0_n1" lane="e1_rev_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e7_0_n1" lane="e7_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e6_0_n1" lane="e6_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+
+    <laneAreaDetector id="det_e2_rev_0_n2" lane="e2_rev_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e8_0_n2" lane="e8_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e1_0_n2" lane="e1_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+
+    <laneAreaDetector id="det_e2_0_n3" lane="e2_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e3_rev_0_n3" lane="e3_rev_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e9_0_n3" lane="e9_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+
+    <laneAreaDetector id="det_e10_0_n4" lane="e10_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e3_0_n4" lane="e3_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e4_rev_0_n4" lane="e4_rev_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+
+    <laneAreaDetector id="det_e4_0_n5" lane="e4_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e5_rev_0_n5" lane="e5_rev_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e11_0_n5" lane="e11_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+
+    <laneAreaDetector id="det_e5_0_n6" lane="e5_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e6_rev_0_n6" lane="e6_rev_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+    <laneAreaDetector id="det_e12_0_n6" lane="e12_0" freq="60" file="detector_output.xml" pos="-50" length="10" />
+
+</additional>
