@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-10-21 23:12:28 by Eclipse SUMO GUI Version 1.24.0
+<!-- generated on 2025-10-25 12:18:08 by Eclipse SUMO GUI Version 1.24.0
 <sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
@@ -15,11 +15,11 @@
 
     <time>
         <begin value="0"/>
-        <end value="2000"/>
+        <end value="4000"/>
     </time>
 
     <traci_server>
-        <remote-port value="64826"/>
+        <remote-port value="52796"/>
     </traci_server>
 
     <gui_only>
@@ -31,17 +31,10 @@
 -->
 
 <tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
-    <tripinfo id="amb_1" depart="0.00" departLane="e5_0" departPos="161.19" departSpeed="0.00" departDelay="0.00" arrival="18.00" arrivalLane="e6_0" arrivalPos="180.91" arrivalSpeed="17.19" duration="18.00" routeLength="216.31" waitingTime="2.00" waitingCount="1" stopTime="0.00" timeLoss="1.26" rerouteNo="1" devices="tripinfo_amb_1" vType="ambulance" speedFactor="1.00" vaporized=""/>
-    <tripinfo id="bg_traffic.0" depart="0.00" departLane="e6_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="47.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="14.04" duration="47.00" routeLength="568.99" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="6.89" rerouteNo="1" devices="tripinfo_bg_traffic.0 routing_bg_traffic.0" vType="car" speedFactor="1.06" vaporized=""/>
-    <tripinfo id="amb_8" depart="0.00" departLane="e11_rev_0" departPos="40.82" departSpeed="0.00" departDelay="0.00" arrival="63.00" arrivalLane="e6_0" arrivalPos="180.91" arrivalSpeed="10.08" duration="63.00" routeLength="515.31" waitingTime="16.00" waitingCount="3" stopTime="0.00" timeLoss="23.97" rerouteNo="1" devices="tripinfo_amb_8" vType="ambulance" speedFactor="1.00" vaporized=""/>
-    <tripinfo id="amb_3" depart="0.00" departLane="e1_0" departPos="8.23" departSpeed="0.00" departDelay="0.00" arrival="65.00" arrivalLane="e6_0" arrivalPos="180.91" arrivalSpeed="16.08" duration="65.00" routeLength="743.79" waitingTime="5.00" waitingCount="4" stopTime="0.00" timeLoss="8.73" rerouteNo="2" devices="tripinfo_amb_3" vType="ambulance" speedFactor="1.00" vaporized=""/>
-    <tripinfo id="bg_traffic.1" depart="10.00" departLane="e6_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="67.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="11.97" duration="57.00" routeLength="568.99" waitingTime="2.00" waitingCount="1" stopTime="0.00" timeLoss="12.44" rerouteNo="1" devices="tripinfo_bg_traffic.1 routing_bg_traffic.1" vType="car" speedFactor="0.94" vaporized=""/>
-    <tripinfo id="bg_traffic.2" depart="20.00" departLane="e6_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="69.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="13.04" duration="49.00" routeLength="568.99" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="7.34" rerouteNo="1" devices="tripinfo_bg_traffic.2 routing_bg_traffic.2" vType="car" speedFactor="1.01" vaporized=""/>
-    <tripinfo id="amb_2" depart="0.00" departLane="e10_0" departPos="117.50" departSpeed="0.00" departDelay="0.00" arrival="78.00" arrivalLane="e4_0" arrivalPos="180.91" arrivalSpeed="45.65" duration="78.00" routeLength="1005.26" waitingTime="4.00" waitingCount="2" stopTime="0.00" timeLoss="2.09" rerouteNo="2" devices="tripinfo_amb_2" vType="ambulance" speedFactor="1.00" vaporized=""/>
-    <tripinfo id="amb_4" depart="0.00" departLane="e2_0" departPos="88.91" departSpeed="0.00" departDelay="0.00" arrival="79.00" arrivalLane="e6_0" arrivalPos="180.91" arrivalSpeed="8.33" duration="79.00" routeLength="672.30" waitingTime="18.00" waitingCount="4" stopTime="0.00" timeLoss="28.67" rerouteNo="2" devices="tripinfo_amb_4" vType="ambulance" speedFactor="1.00" vaporized=""/>
-    <tripinfo id="amb_5" depart="0.00" departLane="e3_0" departPos="106.73" departSpeed="0.00" departDelay="0.00" arrival="84.00" arrivalLane="e6_0" arrivalPos="180.91" arrivalSpeed="15.18" duration="84.00" routeLength="836.14" waitingTime="13.00" waitingCount="3" stopTime="0.00" timeLoss="20.74" rerouteNo="2" devices="tripinfo_amb_5" vType="ambulance" speedFactor="1.00" vaporized=""/>
-    <tripinfo id="bg_traffic.3" depart="30.00" departLane="e6_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="90.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="14.62" duration="60.00" routeLength="568.99" waitingTime="10.00" waitingCount="1" stopTime="0.00" timeLoss="21.46" rerouteNo="1" devices="tripinfo_bg_traffic.3 routing_bg_traffic.3" vType="car" speedFactor="1.08" vaporized=""/>
-    <tripinfo id="amb_6" depart="0.00" departLane="e4_0" departPos="7.89" departSpeed="0.00" departDelay="0.00" arrival="93.00" arrivalLane="e4_0" arrivalPos="180.91" arrivalSpeed="46.69" duration="93.00" routeLength="1146.50" waitingTime="11.00" waitingCount="2" stopTime="0.00" timeLoss="7.18" rerouteNo="2" devices="tripinfo_amb_6" vType="ambulance" speedFactor="1.00" vaporized=""/>
-    <tripinfo id="bg_traffic.4" depart="40.00" departLane="e6_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="93.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="14.26" duration="53.00" routeLength="568.99" waitingTime="1.00" waitingCount="1" stopTime="0.00" timeLoss="11.93" rerouteNo="1" devices="tripinfo_bg_traffic.4 routing_bg_traffic.4" vType="car" speedFactor="1.03" vaporized=""/>
-    <tripinfo id="bg_traffic.5" depart="53.00" departLane="e6_0" departPos="5.10" departSpeed="0.00" departDelay="3.00" arrival="116.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="11.30" duration="63.00" routeLength="568.99" waitingTime="1.00" waitingCount="1" stopTime="0.00" timeLoss="12.33" rerouteNo="1" devices="tripinfo_bg_traffic.5 routing_bg_traffic.5" vType="car" speedFactor="0.83" vaporized=""/>
+    <tripinfo id="amb_1" depart="0.00" departLane="e5_0" departPos="161.19" departSpeed="0.00" departDelay="0.00" arrival="18.00" arrivalLane="e6_0" arrivalPos="180.91" arrivalSpeed="17.18" duration="18.00" routeLength="216.31" waitingTime="2.00" waitingCount="1" stopTime="0.00" timeLoss="1.30" rerouteNo="1" devices="tripinfo_amb_1" vType="ambulance" speedFactor="1.00" vaporized=""/>
+    <tripinfo id="bg_traffic_main.0" depart="0.00" departLane="e6_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="47.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="13.91" duration="47.00" routeLength="568.99" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="7.07" rerouteNo="1" devices="tripinfo_bg_traffic_main.0 routing_bg_traffic_main.0" vType="car" speedFactor="1.06" vaporized=""/>
+    <tripinfo id="amb_3" depart="0.00" departLane="e3_0" departPos="128.90" departSpeed="0.00" departDelay="0.00" arrival="49.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="39.58" duration="49.00" routeLength="626.00" waitingTime="4.00" waitingCount="2" stopTime="0.00" timeLoss="0.20" rerouteNo="2" devices="tripinfo_amb_3" vType="ambulance" speedFactor="1.00" vaporized=""/>
+    <tripinfo id="amb_4" depart="0.00" departLane="e7_rev_0" departPos="7.50" departSpeed="0.00" departDelay="0.00" arrival="54.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="48.00" duration="54.00" routeLength="548.63" waitingTime="12.00" waitingCount="5" stopTime="0.00" timeLoss="9.79" rerouteNo="1" devices="tripinfo_amb_4" vType="ambulance" speedFactor="1.00" vaporized=""/>
+    <tripinfo id="amb_5" depart="0.00" departLane="e12_0" departPos="81.04" departSpeed="0.00" departDelay="0.00" arrival="70.00" arrivalLane="e4_0" arrivalPos="180.91" arrivalSpeed="48.00" duration="70.00" routeLength="653.28" waitingTime="22.00" waitingCount="3" stopTime="0.00" timeLoss="19.03" rerouteNo="1" devices="tripinfo_amb_5" vType="ambulance" speedFactor="1.00" vaporized=""/>
+    <tripinfo id="bg_traffic_main.1" depart="25.00" departLane="e6_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="78.00" arrivalLane="e2_0" arrivalPos="180.91" arrivalSpeed="12.97" duration="53.00" routeLength="568.99" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="7.69" rerouteNo="1" devices="tripinfo_bg_traffic_main.1 routing_bg_traffic_main.1" vType="car" speedFactor="0.94" vaporized=""/>
 </tripinfos>
