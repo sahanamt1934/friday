@@ -1,0 +1,11 @@
+ambulance_id,patient_id,est_time_to_patient,est_time_to_hospital,est_total_mission_time,est_path_edges
+amb_1,P01,26.05,39.07,67.12,e5 e6 e1 e2
+amb_2,P08,35.62,48.64,86.26,e10 e10_rev e12 e12_rev e8 e2
+amb_3,P02,26.05,49.79,77.84,e3 e3_rev e9_rev e12 e6
+amb_4,P03,11.87,36.77,50.64,e7_rev e10 e4
+amb_5,P04,36.77,39.07,77.84,e11_rev e8 e1_rev e1 e2
+amb_1,P05,54.86,36.77,93.63,e2 e3 e4 e11_rev e12 e6
+amb_4,P06,57.96,39.07,99.03,e4 e5 e5_rev e5 e6
+amb_5,P09,29.96,50.40,82.36,e2 e2_rev e8_rev e12 e6
+amb_3,P07,55.65,24.90,82.55,e6 e7_rev e10 e4
+amb_2,P10,41.84,36.77,80.61,e2 e2_rev e8_rev e12 e6
